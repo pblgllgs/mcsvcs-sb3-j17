@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pblgllgs/config-server-j17-sb3.git
+          username: pblgllgs
+          password: ${GITHUB_TOKEN}
+          clone-on-start: true
+          default-label: main
+          try-master-branch: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh,health
