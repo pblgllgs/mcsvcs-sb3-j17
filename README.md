@@ -40,3 +40,5 @@ In windows download from the [page](https://www.elastic.co/) official files and 
 ```url
 https://github.com/pblgllgs/config-server-j17-sb3
 ```
+
+## K8S
