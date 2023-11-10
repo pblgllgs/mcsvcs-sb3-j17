@@ -34,3 +34,9 @@ In windows download from the [page](https://www.elastic.co/) official files and 
   #RENEW ELASTIC TOKEN FOR KIBANA
   bin/elasticsearch-create-enrollment-token -s kibana
 ```
+
+## Config properties
+
+```url
+https://github.com/pblgllgs/config-server-j17-sb3
+```
