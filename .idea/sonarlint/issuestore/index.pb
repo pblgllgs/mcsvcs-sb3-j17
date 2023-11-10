@@ -70,3 +70,5 @@ K
 logstash/docker-compose.yml,e\a\ead2298585d231c60cde2e3ef00089098ceff054
 =
 logstash/.env,1\a\1a5c8e463d5c8ae083b004e8eb1f839d186d572d
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
