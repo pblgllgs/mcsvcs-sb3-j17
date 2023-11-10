@@ -64,3 +64,9 @@ H
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+=
+.env.template,c\b\cba580618a52ae1531e8a3a2da7595593afd602d
+K
+logstash/docker-compose.yml,e\a\ead2298585d231c60cde2e3ef00089098ceff054
+=
+logstash/.env,1\a\1a5c8e463d5c8ae083b004e8eb1f839d186d572d
