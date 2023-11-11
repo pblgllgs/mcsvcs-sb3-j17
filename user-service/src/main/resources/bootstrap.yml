@@ -7,3 +7,6 @@ spring:
     import: optional:configserver:http://localhost:8888
   profiles:
     active: local
+clients:
+  albums:
+    url: http://albums-ws
