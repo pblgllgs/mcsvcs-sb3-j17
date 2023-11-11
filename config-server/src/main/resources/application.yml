@@ -11,8 +11,7 @@ spring:
           username: pblgllgs
           password: ${GITHUB_TOKEN}
           clone-on-start: true
-          default-label: main
-          try-master-branch: true
+          default-label: cloud-kubernetes
 management:
   endpoints:
     web:

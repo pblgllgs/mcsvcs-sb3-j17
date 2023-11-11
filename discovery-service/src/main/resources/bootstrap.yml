@@ -1,9 +1,0 @@
-server:
-  port: 8761
-spring:
-  application:
-    name: discoveryservice
-  config:
-    import: optional:configserver:http://localhost:8888
-  profiles:
-    active: local
