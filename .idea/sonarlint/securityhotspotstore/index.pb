@@ -76,3 +76,5 @@ y
 Iuser-service/src/main/java/com/pblgllgs/users/UserServiceApplication.java,2\3\23c01f246506b2fcd4e2622001562783a34a9626
 t
 Duser-service/src/main/java/com/pblgllgs/users/InitialUsersSetup.java,4\e\4e44c28f4f16deb3a8c8cc5ae8d0bba23ced357b
+ 
+paccount-management-service/src/main/java/com/pblgllgs/accountmanagement/AccountManagementServiceApplication.java,5\5\5528ebf6257a52f33f981515a1a163cce48cc25b
