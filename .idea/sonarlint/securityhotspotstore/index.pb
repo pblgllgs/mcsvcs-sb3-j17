@@ -72,3 +72,7 @@ K
 logstash/.env,1\a\1a5c8e463d5c8ae083b004e8eb1f839d186d572d
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+y
+Iuser-service/src/main/java/com/pblgllgs/users/UserServiceApplication.java,2\3\23c01f246506b2fcd4e2622001562783a34a9626
+t
+Duser-service/src/main/java/com/pblgllgs/users/InitialUsersSetup.java,4\e\4e44c28f4f16deb3a8c8cc5ae8d0bba23ced357b
