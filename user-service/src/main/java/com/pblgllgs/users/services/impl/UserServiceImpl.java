@@ -27,17 +27,17 @@ import java.util.*;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final ModelMapper mapper;
+    private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final AlbumClient albumClient;
 
     @Override
     public UserDto createUser(UserDto userDto) {
-        UserEntity userEntity = mapper.map(userDto, UserEntity.class);
+        UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
         userEntity.setUserId(UUID.randomUUID().toString());
         userEntity.setEncryptedPassword(passwordEncoder.encode(userDto.getPassword()));
         userRepository.save(userEntity);
-        return mapper.map(userEntity, UserDto.class);
+        return modelMapper.map(userEntity, UserDto.class);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
         if (userEntity == null) {
             throw new UsernameNotFoundException("USER_NOT_FOUND");
         }
-        return mapper.map(userEntity, UserDto.class);
+        return modelMapper.map(userEntity, UserDto.class);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
         if (userEntity == null) {
             throw new UsernameNotFoundException("user not found");
         }
-        UserDto userDto = mapper.map(userEntity, UserDto.class);
+        UserDto userDto = modelMapper.map(userEntity, UserDto.class);
         log.debug("Before calling albums microservice");
         List<AlbumResponseModel> userAlbums = albumClient.findAllAlbums(userId, authorization);
         log.debug("After calling albums microservice");

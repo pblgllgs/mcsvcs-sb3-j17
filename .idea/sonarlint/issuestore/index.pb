@@ -9,8 +9,6 @@ R
 "account-management-service/pom.xml,9\6\9697b2699205af68d26572a03f82d988ab00e398
 C
 api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
-E
-config-server/pom.xml,a\2\a2f9618c8ad821b143a07a29a9805fcb0b2df470
 
 Oalbum-service/src/main/java/com/pblgllgs/album/filters/AuthorizationFilter.java,d\8\d8b327863f5150b93fc3e1dda0d0d279fe645012
 x
@@ -25,8 +23,6 @@ B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 4
 .env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
-|
-Lconfig-server/src/main/java/com/pblgllgs/config/ConfigServerApplication.java,9\e\9e651575be87323fd0870ca76d9efa94af4ca725
 š
 jaccount-management-service/src/main/java/com/pblgllgs/accountmanagement/controllers/AccountController.java,1\3\1358dd23b1d96086618e7484faa0ad46cca706ab
 {
@@ -39,8 +35,6 @@ z
 Juser-service/src/main/java/com/pblgllgs/users/security/SecurityConfig.java,e\b\eb4ab2f3918965a25cb82405cc8b4162e3992eed
 
 Oalbum-service/src/main/java/com/pblgllgs/album/controllers/AlbumController.java,1\0\1022f17a1279a954575261cd817acab009a50fbd
-H
-config-server/Dockerfile,b\6\b61e3bf1cf202a99b9cf49c6d7e26c98df17134b
 F
 api-gateway/Dockerfile,9\5\9548e2ce3bdfe112d8c757987e1beebc1ecab5ed
 U
@@ -74,3 +68,5 @@ paccount-management-service/src/main/java/com/pblgllgs/accountmanagement/Account
 Muser-service/src/main/java/com/pblgllgs/users/controllers/UserController.java,9\c\9c239adb9ffb3d4ae497509184c65559b09cffef
 …
 Uapi-gateway/src/main/java/com/pblgllgs/gateway/filters/AuthorizationHeaderFilter.java,e\9\e904a356b7c7a698fbdbfedf5fc5997a2bb12a68
+€
+Puser-service/src/main/java/com/pblgllgs/users/services/impl/UserServiceImpl.java,0\2\028ae707d7196e1bc3d2345b19444d5cc44ca58a
