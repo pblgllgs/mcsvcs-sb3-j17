@@ -38,11 +38,17 @@ public class RoleEntity {
             name = "roles_authorities",
             joinColumns = @JoinColumn(
                     name = "roles_id",
-                    referencedColumnName = "id"
+                    referencedColumnName = "id",
+                    foreignKey = @ForeignKey(
+                            name = "roles_authorities_id_foreign_key"
+                    )
             ),
             inverseJoinColumns = @JoinColumn(
                     name = "authorities_id",
-                    referencedColumnName = "id"
+                    referencedColumnName = "id",
+                    foreignKey = @ForeignKey(
+                            name = "authorities_roles_id_foreign_key"
+                    )
             )
     )
     private Collection<AuthorityEntity> authorities;
