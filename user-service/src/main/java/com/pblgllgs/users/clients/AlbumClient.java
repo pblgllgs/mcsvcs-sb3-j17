@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import java.util.ArrayList;
 import java.util.List;
 
-@FeignClient(name = "albums")
+@FeignClient(name = "albums", url = "${clients.albums.url}")
 public interface AlbumClient {
 
     @GetMapping("/users/{id}/albums")

@@ -27,17 +27,36 @@ import java.util.*;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final ModelMapper modelMapper;
+//    private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final AlbumClient albumClient;
 
     @Override
     public UserDto createUser(UserDto userDto) {
-        UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
+        UserEntity userEntity = mapperUserDtoToUserEntity(userDto);
         userEntity.setUserId(UUID.randomUUID().toString());
         userEntity.setEncryptedPassword(passwordEncoder.encode(userDto.getPassword()));
         userRepository.save(userEntity);
-        return modelMapper.map(userEntity, UserDto.class);
+
+        return mapperUserEntityToUserDto(userEntity);
+    }
+
+    private UserDto mapperUserEntityToUserDto(UserEntity userEntity) {
+        UserDto userDto =  new UserDto();
+         userDto.setFirstName(userEntity.getFirstName());
+         userDto.setLastName(userEntity.getLastName());
+         userDto.setPassword(userEntity.getEncryptedPassword());
+         userDto.setEmail(userEntity.getEmail());
+         userDto.setUserId(userEntity.getUserId());
+        return userDto;
+    }
+
+    private UserEntity mapperUserDtoToUserEntity(UserDto userDto) {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setFirstName(userDto.getFirstName());
+        userEntity.setLastName(userDto.getLastName());
+        userEntity.setEmail(userDto.getEmail());
+        return userEntity;
     }
 
     @Override
@@ -46,7 +65,7 @@ public class UserServiceImpl implements UserService {
         if (userEntity == null) {
             throw new UsernameNotFoundException("USER_NOT_FOUND");
         }
-        return modelMapper.map(userEntity, UserDto.class);
+        return mapperUserEntityToUserDto(userEntity);
     }
 
     @Override
@@ -64,7 +83,7 @@ public class UserServiceImpl implements UserService {
         if (userEntity == null) {
             throw new UsernameNotFoundException("user not found");
         }
-        UserDto userDto = modelMapper.map(userEntity, UserDto.class);
+        UserDto userDto = mapperUserEntityToUserDto(userEntity);
         log.debug("Before calling albums microservice");
         List<AlbumResponseModel> userAlbums = albumClient.findAllAlbums(userId, authorization);
         log.debug("After calling albums microservice");

@@ -23,7 +23,6 @@ public class UserController {
 
     private final ServletWebServerApplicationContext applicationContext;
     private final UserService userService;
-    private final ModelMapper mapper;
     private final Environment environment;
 
     @GetMapping("/status/check")
@@ -36,13 +35,31 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<CreateUserResponseModel> saveUser(@Valid @RequestBody CreateUserRequestModel userRequestModel) {
-        UserDto userDto = mapper.map(userRequestModel, UserDto.class);
+        UserDto userDto = mapperCreateUserRequestModelToUserDto(userRequestModel);
         UserDto userDtoSaved = userService.createUser(userDto);
-        CreateUserResponseModel userResponseModel = mapper.map(userDtoSaved, CreateUserResponseModel.class);
+        CreateUserResponseModel userResponseModel = mapperUserDtoToCreateUserResponseModel(userDtoSaved);
         return ResponseEntity.status(HttpStatus.OK).body(userResponseModel);
     }
 
-//    @PreAuthorize("principal == #userId")
+    private CreateUserResponseModel mapperUserDtoToCreateUserResponseModel(UserDto userDtoSaved) {
+        CreateUserResponseModel createUserResponseModel = new CreateUserResponseModel();
+        createUserResponseModel.setFirstName(userDtoSaved.getFirstName());
+        createUserResponseModel.setLastName(userDtoSaved.getLastName());
+        createUserResponseModel.setEmail(userDtoSaved.getEmail());
+        createUserResponseModel.setUserId(userDtoSaved.getUserId());
+        return createUserResponseModel;
+    }
+
+    private UserDto mapperCreateUserRequestModelToUserDto(CreateUserRequestModel userRequestModel) {
+        UserDto userDto = new UserDto();
+        userDto.setFirstName(userRequestModel.getFirstName());
+        userDto.setLastName(userRequestModel.getLastName());
+        userDto.setEmail(userRequestModel.getEmail());
+        userDto.setPassword(userRequestModel.getPassword());
+        return userDto;
+    }
+
+    //    @PreAuthorize("principal == #userId")
 //    @PostAuthorize("principal == returnObject.getBody().getUserId()")
     @PreAuthorize("hasRole('ADMIN') or principal == #userId")
     @GetMapping(value = "/{userId}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
