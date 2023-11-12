@@ -11,16 +11,10 @@ C
 api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
 E
 config-server/pom.xml,a\2\a2f9618c8ad821b143a07a29a9805fcb0b2df470
-I
-discovery-service/pom.xml,7\e\7e2a93dc15928a8ab4dff670d6d413b0a1b7e7b7
-G
-jwt-authorities/pom.xml,6\0\603ecedf566bc249e40a5e2589291d356b077f4e
 
 Oalbum-service/src/main/java/com/pblgllgs/album/filters/AuthorizationFilter.java,d\8\d8b327863f5150b93fc3e1dda0d0d279fe645012
 x
 Halbum-service/src/main/java/com/pblgllgs/album/entities/AlbumEntity.java,5\e\5e86d79f12ce20659125d7e63b6e63c163e43800
-|
-Ljwt-authorities/src/main/java/com/pblgllgs/jwt/services/JwtClaimsParser.java,7\8\78e2bd8681a37156f0dfbfcf578739ad51d07cdc
 ƒ
 Salbum-service/src/main/java/com/pblgllgs/album/services/JwtClaimsParserService.java,3\c\3c38616583a8b092d97ef35e1ef19879e70580ce
 ‚
@@ -53,8 +47,6 @@ U
 %account-management-service/Dockerfile,8\6\8671c9963e8cbd0ccecb066fd4d7a7311be3506e
 H
 album-service/Dockerfile,e\8\e8d3fa5c98d020e20d21416d4a763fa921c7c519
-L
-discovery-service/Dockerfile,f\a\fae7815f4059bea6d99540adfcefb702cfd77c12
 G
 user-service/Dockerfile,0\f\0f01b412d90efb467f3714ee012c2a826ca7ea8e
 ˆ
@@ -78,5 +70,7 @@ t
 Duser-service/src/main/java/com/pblgllgs/users/InitialUsersSetup.java,4\e\4e44c28f4f16deb3a8c8cc5ae8d0bba23ced357b
  
 paccount-management-service/src/main/java/com/pblgllgs/accountmanagement/AccountManagementServiceApplication.java,5\5\5528ebf6257a52f33f981515a1a163cce48cc25b
-‡
-Wdiscovery-service/src/main/java/com/pblgllgs/discovery/DiscoveryServiceApplication.java,3\7\377eb62d862f0c7275fd65079fa3b4022da28346
+}
+Muser-service/src/main/java/com/pblgllgs/users/controllers/UserController.java,9\c\9c239adb9ffb3d4ae497509184c65559b09cffef
+…
+Uapi-gateway/src/main/java/com/pblgllgs/gateway/filters/AuthorizationHeaderFilter.java,e\9\e904a356b7c7a698fbdbfedf5fc5997a2bb12a68

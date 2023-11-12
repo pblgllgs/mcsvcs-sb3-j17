@@ -1,8 +1,8 @@
 server:
-  port: 8081
+  port: 8080
 spring:
   application:
-    name: albums-ws
+    name: albums
   config:
     import: optional:configserver:http://localhost:8888
   profiles:

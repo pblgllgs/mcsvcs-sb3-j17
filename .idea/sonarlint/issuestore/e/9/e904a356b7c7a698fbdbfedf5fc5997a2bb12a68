@@ -1,0 +1,16 @@
+
+J
+java:S3740x"/Provide the parametrized type for this generic.(½ì°úÿÿÿÿ
+Q	java:S125&"<This block of commented-out lines of code should be removed.(é€Ä¾
+V	java:S125)"<This block of commented-out lines of code should be removed.(³ß¥Ìıÿÿÿÿ
+V	java:S125;"<This block of commented-out lines of code should be removed.(¥“éÁúÿÿÿÿ
+V	java:S125U"<This block of commented-out lines of code should be removed.(àâŸ ûÿÿÿÿ
+G
+java:S1481n",Remove this unused "subject" local variable.(´ª„ßøÿÿÿÿ
+^
+java:S5659x"CThe JWT signature (JWS) should be verified before using this token.(½ì°úÿÿÿÿ
+E
+java:S2201z"*The return value of "toList" must be used.(ùÒúÿÿÿÿ
+W	java:S125‚"<This block of commented-out lines of code should be removed.(«“÷‰ùÿÿÿÿ
+S
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ

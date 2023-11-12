@@ -11,15 +11,12 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import java.util.ArrayList;
 import java.util.List;
 
-@FeignClient(
-        name = "albums-ws",
-        url = "${clients.albums.url}"
-)
+@FeignClient(name = "albums")
 public interface AlbumClient {
 
     @GetMapping("/users/{id}/albums")
-    @Retry(name = "albums-ws")
-    @CircuitBreaker(name = "albums-ws", fallbackMethod = "getAlbumsFallbackCircuitBreaker")
+    @Retry(name = "albums")
+    @CircuitBreaker(name = "albums", fallbackMethod = "getAlbumsFallbackCircuitBreaker")
     List<AlbumResponseModel> findAllAlbums(@PathVariable String id, @RequestHeader("Authorization") String authorization);
 
     default List<AlbumResponseModel> getAlbumsFallbackCircuitBreaker(String id,String authorization, Throwable exception){

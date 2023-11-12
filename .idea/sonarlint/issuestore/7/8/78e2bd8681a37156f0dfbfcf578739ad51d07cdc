@@ -1,11 +1,0 @@
-
-A
-java:S1452"&Remove usage of generic wildcard type.(ÑŞ÷´ùÿÿÿÿ
-A
-java:S1452"&Remove usage of generic wildcard type.(ÑŞ÷´ùÿÿÿÿ
-^
-java:S5659#"CThe JWT signature (JWS) should be verified before using this token.(Ö’½«øÿÿÿÿ
-A
-java:S1452&"&Remove usage of generic wildcard type.(Ğ¾îúÿÿÿÿ
-h
-java:S6204)"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ŞêŠ£
