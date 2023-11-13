@@ -92,3 +92,9 @@ Suser-service/src/main/java/com/pblgllgs/users/repositories/AuthorityRepository.
 Nuser-service/src/main/java/com/pblgllgs/users/repositories/RoleRepository.java,6\9\690ee29ab3fc53a70a7e37e35443138a5806453e
 ~
 Nuser-service/src/main/java/com/pblgllgs/users/repositories/UserRepository.java,f\0\f0f7512ca830b06766c9bbcabf47d2eeb088341b
+K
+logstash/conf/logstash.conf,1\d\1d498be8d9e406eefd371fe833eda06a9cdc35ae
+F
+logstash/.env.template,b\0\b0fbe655117d2f88e882f585d0163f76e4983866
+B
+mcsvcs-sb3-j17.iml,d\5\d58e060b0ade3e81cd7cc179a2950d73d5eb6232
