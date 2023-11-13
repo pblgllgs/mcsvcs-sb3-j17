@@ -3,7 +3,3 @@ server:
 spring:
   application:
     name: albums
-  config:
-    import: optional:configserver:http://localhost:8888
-  profiles:
-    active: local

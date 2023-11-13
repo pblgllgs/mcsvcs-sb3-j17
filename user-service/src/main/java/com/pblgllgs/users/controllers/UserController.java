@@ -7,7 +7,6 @@ import com.pblgllgs.users.model.responses.UserResponseModel;
 import com.pblgllgs.users.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -65,8 +64,18 @@ public class UserController {
     @GetMapping(value = "/{userId}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<UserResponseModel> getUser(@PathVariable("userId") String userId, @RequestHeader("Authorization") String authorization) {
         UserDto userDto = userService.findUserById(userId, authorization);
-        UserResponseModel returnValue = new ModelMapper().map(userDto, UserResponseModel.class);
+        UserResponseModel returnValue = mapperUserDtoToUserResponseModel(userDto);
         return new ResponseEntity<>(returnValue, HttpStatus.OK);
+    }
+
+    private UserResponseModel mapperUserDtoToUserResponseModel(UserDto userDto) {
+        UserResponseModel responseModel = new UserResponseModel();
+        responseModel.setLastName(userDto.getLastName());
+        responseModel.setFirstName(userDto.getFirstName());
+        responseModel.setEmail(userDto.getEmail());
+        responseModel.setUserId(userDto.getUserId());
+        responseModel.setAlbums(userDto.getAlbums());
+        return responseModel;
     }
 
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('PROFILE_DELETE') or principal == #userId")

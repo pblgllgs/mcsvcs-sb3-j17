@@ -61,11 +61,17 @@ public class UserEntity implements Serializable {
             name = "users_roles",
             joinColumns = @JoinColumn(
                     name = "users_id",
-                    referencedColumnName = "id"
+                    referencedColumnName = "id",
+                    foreignKey = @ForeignKey(
+                            name = "users_roles_id_foreign_key"
+                    )
             ),
             inverseJoinColumns = @JoinColumn(
                     name = "roles_id",
-                    referencedColumnName = "id"
+                    referencedColumnName = "id",
+                    foreignKey = @ForeignKey(
+                            name = "roles_users_id_foreign_key"
+                    )
             )
     )
     private Collection<RoleEntity> roles;

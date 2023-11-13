@@ -3,8 +3,3 @@ server:
 spring:
   application:
     name: users
-  profiles:
-    active: local
-clients:
-  albums:
-    url: http://albums-ws

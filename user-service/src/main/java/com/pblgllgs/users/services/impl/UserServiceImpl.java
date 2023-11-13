@@ -10,7 +10,6 @@ import com.pblgllgs.users.repositories.UserRepository;
 import com.pblgllgs.users.services.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -19,7 +18,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -27,7 +29,6 @@ import java.util.*;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-//    private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final AlbumClient albumClient;
 
@@ -42,12 +43,12 @@ public class UserServiceImpl implements UserService {
     }
 
     private UserDto mapperUserEntityToUserDto(UserEntity userEntity) {
-        UserDto userDto =  new UserDto();
-         userDto.setFirstName(userEntity.getFirstName());
-         userDto.setLastName(userEntity.getLastName());
-         userDto.setPassword(userEntity.getEncryptedPassword());
-         userDto.setEmail(userEntity.getEmail());
-         userDto.setUserId(userEntity.getUserId());
+        UserDto userDto = new UserDto();
+        userDto.setFirstName(userEntity.getFirstName());
+        userDto.setLastName(userEntity.getLastName());
+        userDto.setPassword(userEntity.getEncryptedPassword());
+        userDto.setEmail(userEntity.getEmail());
+        userDto.setUserId(userEntity.getUserId());
         return userDto;
     }
 
