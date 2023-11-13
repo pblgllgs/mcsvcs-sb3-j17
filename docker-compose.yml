@@ -209,7 +209,7 @@ services:
       - microservices_net
 
   zipkin:
-    image: openzipkin/zipkin
+    image: openzipkin/zipkin:2.24
     container_name: zipkin
     ports:
       - "9411:9411"
